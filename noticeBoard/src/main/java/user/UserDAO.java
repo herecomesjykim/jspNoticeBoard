@@ -61,7 +61,8 @@ public class UserDAO {
 		}
 		return -1;
 	}
-	//이 밑으로는 스스로 만든 메소드인데 어떻게 써야할지 모르겠네;
+	//이 밑으로는 스스로 생각하여 만든 메소드들
+	//쿼리문으로 DB조회하여 user객체에 담아 리턴
 	public User getUser(String userID) {
 		String sql="select * from bbs where userID = ? ";
 		try {
@@ -83,7 +84,7 @@ public class UserDAO {
 		
 	}
 	
-	//회원정보 수정 메소드 구현얘정 비밀번호와 이메일만 수정가능하도록
+	//회원정보 수정 메소드 비밀번호와 이메일만 수정가능하도록
 	public int edit(String userID,String userPassword,String userEmail) {
 	  	String sql="update bbs set userPassword = ?, userEmail = ? where userID = ?";
 	  	try{
@@ -97,7 +98,7 @@ public class UserDAO {
 	  	}return -1;//DB오류
 	}
 	
-	//회원탈퇴 메소드 구현예정
+	//회원탈퇴 메소드
 	public int bye(String userID) {
 		String sql="delete table bbs where userID=?";
 		try {

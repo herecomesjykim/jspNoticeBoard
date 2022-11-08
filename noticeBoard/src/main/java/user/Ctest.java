@@ -1,5 +1,5 @@
 package user;
-
+//연결테스트
 import java.sql.*;
 public class Ctest {
 
